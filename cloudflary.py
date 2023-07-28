@@ -21,9 +21,10 @@ def patch_dns_records(zone_id=ZONE_ID, record_id=None, payload={}):
         json=payload,
         headers=get_headers(),
     ).json()
-
+    print()
+    print(response)
     if response.get("success"):
-        return "CloudFlare record updated successfuly"
+        return "CloudFlare record updated successfully."
     
     message = ""
     for error in response.get("errors"):
