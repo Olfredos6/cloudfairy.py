@@ -10,8 +10,30 @@ The `test` server is frequently switched on and off and its IP address changes e
 
 ## How to use it
 ### Prerequisites
-Simply make sure you have `wget` or similar tool installed and download this script:
+- Make sure you have `wget` or similar tool installed
+- Have Python 3 installed
+- Add your Cloudflare configurations to your environment variables as follows:
 ```bash
-wget 
+export CLOUDFLARE_AUTH_EMAIL="Cloudflare account email"
+export CLOUDFLARE_AUTH_KEY="Cloudflare API Key"
+export CLOUDFLARE_ZONE_ID="Your zone ID"
 ```
 
+### Running the script
+
+
+```bash
+wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudflary.py | python3 - DNS_RECORD_IDENTIFIER "PYTHON_DICTIONARY_STRING"
+```
+
+Command args:
+- DNS_RECORD_IDENTIFIER: the ID of the record you wish to patch e.g: 8ec292220081262ca459013e40f80df5
+- PYTHON_DICTIONARY_STRING: the dictinnary-like python string to serve as payload. e.g: `{"content": "13.246.32.197"}`
+
+
+### Example
+```bash
+wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudflary.py |python3 - 8ec292220081262ca459013e40f80df5 '{"content": "142.251.47.78"}'
+```
+
+> 142.251.47.78 is Google :sweat_smile:
