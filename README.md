@@ -32,8 +32,14 @@ Command args:
 
 
 ### Example
-```bash
-wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudflary.py |python3 - 8ec292220081262ca459013e40f80df5 '{"content": "142.251.47.78"}'
-```
+- Simple example:
+  ```bash
+  wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudflary.py |python3 - 8ec292220081262ca459013e40f80df5 '{"content": "142.251.47.78"}'
+  ```
 
 > 142.251.47.78 is Google :sweat_smile:
+
+- One more realistic example: Automatically grab host's public IP
+  ```bash
+  wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudflary.py |python3 - 8ec292220081262ca459013e40f80df5 "{\"content\": \"$(curl -s ifconfig.me)\"}"
+  ```
