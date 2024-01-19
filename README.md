@@ -1,5 +1,5 @@
 
-# A Python script for patching a Cloudflare's DNS record.
+# A CLI for viewing and editing Cloudflare DNS records.
 
 If you are using Cloudflare as your CDN or proxy to a server with no reserved IP address from a cloud provider, you could use this command line utility script to update your records as desired. Most often, you would want to update your Cloudflare records when the server is switched on, with the newly attributed IP address, without having to connect to Cloudflare(manually). This tool offers an `update` command that allows doing just that.
 
