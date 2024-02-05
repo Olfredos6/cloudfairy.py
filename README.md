@@ -26,7 +26,7 @@ export CLOUDFLARE_ZONE_ID="Your zone ID"
 
 
 ```bash
-wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudflary.py | python3 - [command] [arguments]
+wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/cli/cloudflary.py | python3 - [command] [arguments]
 ```
 
 #### Available commands
@@ -39,12 +39,12 @@ wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudfl
 ### Example
 - Simple example:
   ```bash
-  wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudflary.py |python3 - update --record-id 8ec292220081262ca459013e40f80df5 --payload '{"content": "142.251.47.78"}'
+  wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/cli/cloudflary.py |python3 - update --record-id 8ec292220081262ca459013e40f80df5 --payload '{"content": "142.251.47.78"}'
   ```
 
 > 142.251.47.78 is Google :sweat_smile:
 
 - One more realistic example: Automatically grab host's public IP from an Amazon EC2 instance and update a Cloudflare record
   ```bash
-  wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/main/cloudflary.py |python3 - update --record-id 8ec292220081262ca459013e40f80df5 --payload "{\"content\": \"$(curl -s ifconfig.me)\"}"
+  wget -O - https://raw.githubusercontent.com/Olfredos6/cloudflary.py/cli/cloudflary.py |python3 - update --record-id 8ec292220081262ca459013e40f80df5 --payload "{\"content\": \"$(curl -s ifconfig.me)\"}"
   ```
